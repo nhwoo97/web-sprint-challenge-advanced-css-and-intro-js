@@ -159,3 +159,19 @@ button:hover{
         height: 35vh;
     }
 }
+/*Stretch Goals!*/
+@media(max-width:320px){
+    body{
+        line-height: 1;
+    }
+    header nav{
+        width: 100%;
+    }
+    button{
+        margin-top: 5%;
+    }
+    .artists-container :hover{
+        text-transform: uppercase;
+        color: #48D1CC;
+    }
+}

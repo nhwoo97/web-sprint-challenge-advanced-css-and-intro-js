@@ -238,13 +238,13 @@ function getArtistByIndex(arr, ind) {
 function get20s(arr,year){
   let newCentury=[];
     for(let i = 0; i < arr.length; i++){
-        if(arr[i]=years.includes(year)){
+        if(arr[i].years.includes(year)){
         newCentury.push(arr[i]);
         }
     }
-    return newArray;
+    return newCentury;
 }
-console.log('Task 7...', get20s(artists, '19'));
+console.log(get20s(artists, '19'));
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
