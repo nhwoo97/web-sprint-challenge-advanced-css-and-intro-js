@@ -205,14 +205,18 @@ const artists = [
 
 /* Task 1: Practice accessing data above by console.log-ing following items:
 
-(1) Name of the first artist (0th index) in the array
-(2) Bio of the third artist (2nd index) in the array */
+(1) Name of the first artist (0th index) in the array*/
 
+console.log(artists[0].name);
 
+/*(2) Bio of the third artist (2nd index) in the array */
+
+console.log(artists[2].name);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-
+artists[8].name = "Vincent Van Gogh";
+console.log(artists[8].name);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -222,22 +226,25 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(array, index) {
-    /* code here */
+function getArtistByIndex(arr, ind) {
+    return 'The artist at index '+ ind+ ' is '+ arr[ind].name; 
   }
-  
+  console.log(getArtistByIndex(artists,0));
   /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who lived in the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
-
-  /* Code here */
-
+function get20s(arr,year){
+  let newCentury=[];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i]=years.includes(year)){
+        newCentury.push(arr[i]);
+        }
+    }
+    return newArray;
 }
-
-
+console.log('Task 7...', get20s(artists, '19'));
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
@@ -248,10 +255,11 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(arr, ind) {
+  arr.splice(ind,1);  
+  return arr.length
   }
-  
+//console.log(removeArtist(artists,0))
   /**
 
 
@@ -269,12 +277,13 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */){
+function addArtist(idz, namez, yearsz, genrez, nationalityz, bioz ){
 
-    /* Code here */
-
+  let newArray = [{id: idz, name: namez, years: yearsz, genre: genrez, nationality: nationalityz, bio: bioz}]
+  artists.push(...newArray);
+  return artists;
   }
-
+console.log(addArtist(21, 'Nam', '1997-2020', 'Web Desing', 'Republic of Korea', 'Born to debug!' ));
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
@@ -283,12 +292,17 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
-
-  /* Code here */
-
+function lotsOfArt(arr){
+  let hundredArtists = [];
+  for (let i=0; i<arr.length; i++){
+    if (arr[i].paintings > 100){
+      hundredArtists.push(arr[i])
+    }
+  }
+  return hundredArtists;
 }
 
+console.log(lotsOfArt(artists));
 
 
 // 🎨🎨 STRETCH 🎨🎨//
